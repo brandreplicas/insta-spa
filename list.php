@@ -20,4 +20,4 @@ if($link){
 arsort($imgs);
 $imgs = array_keys($imgs);
 
-file_put_contents('imgs.js','var imgs='.json_encode($imgs).';');
+echo 'var imgs=',json_encode($imgs),';';
