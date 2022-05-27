@@ -68,7 +68,8 @@ img,video {
 }
 
 .profile-image img {
-    border-radius: 50%;
+    border-radius: 3px;
+    opacity: 0.9;
 }
 
 .profile-user-settings,
