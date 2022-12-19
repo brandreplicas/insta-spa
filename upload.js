@@ -3,6 +3,12 @@
 (function(document, window, console){
   console.log('script started');
 
+  let delay_put = function(out, attachments, i) {
+    setTimeout(function(){
+      put_file(out, attachments, i);
+    }, 400);
+  };
+
   let put_file = function(out, attachments, i) {
     if(!attachments.hasOwnProperty(i)){
       out.innerHTML += '<br/>You may upload now next stock!';
@@ -16,12 +22,12 @@
     xhr.onload = () => {
       console.log(xhr.responseText);
       out.innerHTML += '<br/>' + xhr.responseText;
-      put_file(out, attachments, i+1);
+      delay_put(out, attachments, i+1);
     }
     xhr.onerror = () => {
       console.log(xhr.statusText);
       out.innerHTML += '<br/>Something went wrong!';
-      put_file(out, attachments, i+1);
+      delay_put(out, attachments, i+1);
     }
     xhr.open('POST', 'upload.php', true);
     xhr.send(formData);
@@ -37,7 +43,7 @@
         return;
       }
       out.textContent = 'Please wait!';
-      put_file(out, attachments, 0);
+      delay_put(out, attachments, 0);
     }, false);
   }, false);
 })(document, window, console);

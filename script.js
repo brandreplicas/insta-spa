@@ -3,7 +3,7 @@
     var lastEl = document.querySelector('.loader');
     var base = encodeURIComponent('https://watchotimeonline.in/insta/');
     var msg = encodeURIComponent('Hi Fashluxee,\nI would like to talk about this item: \n\n ');
-    var phone = '919503021689';
+    var phone = '917208128600';
     var wsl = 'https://api.whatsapp.com/send?phone='+phone+'&text='+msg;
     var vdos = /(mp4|3gp|ogg)$/;
     function loadMore(){
